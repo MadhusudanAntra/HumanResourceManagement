@@ -1,0 +1,63 @@
+﻿Recruitment Module
+
+JobRequirment
+Id, Title, JobLocation, NoOfPosition, PostingDate, ClosingDate, , IsActive, Description, JobCategoryId
+
+JobCategory
+Id Title IsActive
+
+Candidate
+Id, FirstName, LastName, Phone, Email, CurrentAddress, ResumeUrl
+
+
+Submission
+Id, CandidateId, JobRequirementId, AppliedDate
+
+
+Interview Module
+Interview table
+Id, SubmissionId, InterviewDate, InterviewRound, InterviewTypeId, InterviewStatusId, InterviewerId
+
+InterviewType table (phone, inperson, zoom, MS Team)
+Id, Title, IsActive
+
+InterviewStatusTable (scheduled, rescheduled, cancelled, finished)
+Id, Title, IsActive
+
+Feedback table
+Id, InterviewId, Description, ABBR
+
+
+Onboarding Module
+Employee table
+Id, FirstName, LastName, EmailId, DOB, SSN, CurrentAddress, Phone, HireDate,EmployeeRoleId, EmployeeTypeId, EndDate, EmployeeStatusId,
+ManagerId
+
+EmployeeRole (Analyst, HR, Sales)
+Id, Title, Description, IsActive
+
+EmployeeType (FullTime, PT, intern)
+Id, Title, Description, IsActive
+
+EmployeeStatus (Working/Left/Terminated)
+Id, Title, Description, IsActive
+1    Working               true
+2    Left                  true
+3    Terminated            true
+4    Missing               false
+
+Select Id, Title,Description from Employeestatus where isactive =true
+
+
+Authentication and authorization
+Authentication :- username /password
+Authorization:- rights to access the application 
+
+User
+Id, Username, EmailId, password
+
+Role
+Id, Name, description
+
+UserRole
+id, userid, roleid
