@@ -29,6 +29,6 @@ namespace HRM.ApplicationCore.Entity
         public string EmailId { get; set; }
 
         [Column(TypeName ="varchar(200)")]
-        public string ResumeUrl { get; set; }
+        public string? ResumeUrl { get; set; }
     }
 }
